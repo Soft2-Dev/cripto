@@ -1,4 +1,5 @@
 import 'package:criptoapp/providers/HomeProvider.dart';
+import 'package:criptoapp/providers/validaCoinsFromProvider.dart';
 import 'package:criptoapp/router/routers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,8 +25,8 @@ class AppState extends StatelessWidget {
       providers: [
         // // --------- provider login --------------
         ChangeNotifierProvider(lazy: false, create: (_) => HomeProvider()),
-        // ChangeNotifierProvider(
-        //     lazy: false, create: (_) => GetGenerosProvider()),
+        ChangeNotifierProvider(
+            lazy: false, create: (_) => ValidaCoinsFromProvider()),
       ],
       child: const MyApp(),
     );
