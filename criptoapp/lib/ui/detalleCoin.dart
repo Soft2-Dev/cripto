@@ -64,7 +64,9 @@ class _DetalleCointState extends State<DetalleCoint> {
           const SizedBox(
             height: 20,
           ),
-          const Center(),
+          const Center(
+            child: Text('Calculadora', style: const TextStyle(fontSize: 18)),
+          ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 20),
             child: Row(
