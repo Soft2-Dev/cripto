@@ -34,6 +34,11 @@ class _HomePageState extends State<HomePage> {
           .map((e) => Column(
                 children: [
                   ListTile(
+                    onTap: () {
+                      provider.isSelect = e;
+                      provider.total = e.currentPrice!;
+                      Navigator.pushNamed(context, 'DetalleCoint');
+                    },
                     leading: Image(
                       image: NetworkImage(e.image!),
                     ),
@@ -102,9 +107,7 @@ class _HomePageState extends State<HomePage> {
                         child: Form(
                           child: TextFormField(
                             keyboardType: TextInputType.text,
-                            onChanged: (value) {
-                              provider.getSearchCoins(value);
-                            },
+                            onChanged: (value) => formProvider.dato = value,
                             style: const TextStyle(color: Colors.grey),
                             decoration: const InputDecoration(
                                 contentPadding: EdgeInsets.only(top: 10),
